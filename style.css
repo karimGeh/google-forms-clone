@@ -1,0 +1,190 @@
+:root {
+	--color-one: #f0ebf8;
+	--color-two: #ffffff;
+	--color-three: #673ab7;
+	--color-four: #202124;
+	--color-five: #72767a;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+}
+body {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: column;
+	background: var(--color-one);
+	padding-bottom: 5rem;
+}
+.title {
+	width: 100%;
+	max-width: 650px;
+
+	background: var(--color-two);
+	color: var(--color-four);
+
+	border-radius: 10px;
+	overflow: hidden;
+	margin: 1rem;
+}
+
+.title,
+ol > li {
+	-webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
+	box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
+}
+
+.title > .border {
+	height: 10px;
+	background: var(--color-three);
+}
+.title > h1 {
+	padding: 2rem 1rem;
+	font-weight: lighter;
+}
+
+form {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: column;
+
+	padding: 0 1rem;
+	/* margin: 1rem 0; */
+}
+ul,
+ol {
+	list-style-type: none;
+}
+ol {
+	/* border: 1px solid red; */
+	width: 100%;
+	max-width: 650px;
+}
+ol > li {
+	position: relative;
+	width: 100%;
+	margin-bottom: 1rem;
+	padding: 2rem;
+
+	background: var(--color-two);
+	color: var(--color-four);
+
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+ol > .not_complete {
+	background: red;
+}
+ol #answer {
+	position: absolute;
+	height: 100%;
+	width: 15px;
+	background: var(--color-two);
+	top: 0;
+	right: 0;
+	z-index: 0;
+}
+ol .green {
+	background: green !important;
+}
+ol .red {
+	background: red !important;
+}
+
+.actual-question {
+	font-size: 1.1rem;
+}
+
+/* The container */
+.container {
+	display: block;
+	cursor: pointer;
+	position: relative;
+	margin: 1rem 0;
+
+	font-size: 1rem;
+
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.container input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.checkmark {
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	position: relative;
+
+	margin-right: 1rem;
+
+	background: var(--color-two);
+	border: 2px solid var(--color-five);
+}
+
+.container:hover input ~ .checkmark {
+	-webkit-box-shadow: 0px 0px 0px 10px rgba(0, 0, 0, 0.05);
+	-moz-box-shadow: 0px 0px 0px 10px rgba(0, 0, 0, 0.05);
+	box-shadow: 0px 0px 0px 10px rgba(0, 0, 0, 0.05);
+}
+
+.container input:checked ~ .checkmark {
+	border: 2px solid var(--color-three);
+}
+
+.checkmark:after {
+	content: "";
+	display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+	display: block;
+}
+
+.container .checkmark:after {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+
+	background: var(--color-three);
+}
+
+.submition {
+	width: 100%;
+	max-width: 650px;
+}
+
+.submition input {
+	cursor: pointer;
+	padding: 0.7rem 1rem;
+	background: var(--color-three);
+	color: var(--color-one);
+	border: 0;
+	border-radius: 5px;
+	margin-right: auto;
+	font-size: large;
+}
+.submition input:hover {
+	opacity: 0.9;
+}
